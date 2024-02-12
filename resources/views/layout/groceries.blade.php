@@ -24,7 +24,7 @@
         <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent" id="page-navigation">
             <div class="container">
                 <!-- Navbar Brand -->
-                <a href="{{route('shop')}}" class="navbar-brand">
+                <a href="{{route('home')}}" class="navbar-brand">
                     <img src="assets/img/logo/logo.png" alt="">
                 </a>
 
