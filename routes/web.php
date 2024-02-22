@@ -1,9 +1,8 @@
 <?php
-
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GroceriesController;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,10 +23,10 @@ Route::get('/', [GroceriesController::class,'index'])->name('home');
 Route::get('/shop', [GroceriesController::class,'shop'])->name('shop');
 Route::get('/register', [GroceriesController::class,'register'])->name('register');
 Route::get('/login', [GroceriesController::class,'login'])->name('login');
-//Route::get('/detail', [GroceriesController::class,'detail'])->name('detail');
+
 #con esta ruta se llevara el id del producto a la ruta detail
-//Route::get('/product/{id}', 'ProductController@show')->name('product.detail');
 Route::get('/product/{id}', 'App\Http\Controllers\GroceriesController@detail')->name('detail');
-//Route::get('/product/{id}', [GroceriesController@show])->name('detail');
+Route::resource('contact', ContactController::class);
 
-
+//Route::post('/product/{id}/comment', 'App\Http\Controllers\CommentController@store')->name('comment.store');
+Route::resource('comment',CommentController::class);

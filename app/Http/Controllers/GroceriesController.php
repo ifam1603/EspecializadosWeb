@@ -15,12 +15,12 @@ class GroceriesController extends Controller
         print_r($Product);
         echo "</pre>";
         die();
-*/      $Product = product::all();
+      $Product = product::all();
         echo "<pre>";
         print_r($Product);
         echo "<pre>";
         die();
-
+*/
         return view("groceries/index");
     }
 
@@ -38,15 +38,12 @@ class GroceriesController extends Controller
         return view("groceries/login");
     }
 
-    public function detail($id){
-        // Aquí puedes utilizar $id para cargar el prssoducto correspondiente desde la base de datos
-        $product = Product::where('id', $id)->first();
 
-        if(!$product){
-            abort(404,"jajaja");
-        }
-        // Devolver la vista de detalle del producto con el producto cargado
-        return view('groceries.detail', ['product' => $product]);
+    public function detail($id){
+        // SE modifico esta linea para poder mostrar los detsalles del producto y de sus comentarios
+        $product = Product::with('comments')->findOrFail($id);
+
+    return view('groceries.detail', compact('product'));
     }
 
 }

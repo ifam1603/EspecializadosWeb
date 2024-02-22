@@ -6,17 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Product extends Model
+
+class Comment extends Model
 {
     use HasFactory;
 
-    public function category(): BelongsTo
+    public function product()
     {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
+        return $this->belongsTo(Product::class);
     }
 }
