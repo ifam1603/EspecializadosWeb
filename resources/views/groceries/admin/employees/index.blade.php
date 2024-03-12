@@ -23,7 +23,7 @@
                         <table id="tblProducts">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>no_emp</th>
                                     <th>NAME</th>
                                     <th>SALARY</th>
                                     <th>DEPARTMENT</th>
@@ -38,15 +38,14 @@
                                         <td>{{$emp->salary}}</td>
                                         <td>{{$emp->gender}}</td>
                                         <td>{{$emp->department}}</td>
-                                        
                                     </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 </div>
-@endsection 
+@endsection
