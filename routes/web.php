@@ -42,7 +42,7 @@ Route::get('/admin/products/index', [ProductsController::class,'index'])->name('
 
 Route::get('/admin/products', [ProductsController::class,'index'])->name("admin.products.index");
 
-Route::get("/admin/employees", [EmployeesController::class, 'employees'])->name("admin.employees.index");
+//Route::get("/admin/employees", [EmployeesController::class, 'employees'])->name("admin.employees.index");
 
 Route::get("/admin/employees/index", [EmployeesController::class, 'employees'])->name("admin.employees.index");
 
