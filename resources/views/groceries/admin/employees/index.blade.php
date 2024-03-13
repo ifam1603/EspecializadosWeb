@@ -33,11 +33,11 @@
                             <tbody>
                                 @foreach($employees as $emp)
                                     <tr>
-                                        <td>{{$emp->no_emp}}</td>
-                                        <td>{{$emp->first_name}}</td>
-                                        <td>{{$emp->salary}}</td>
-                                        <td>{{$emp->gender}}</td>
-                                        <td>{{$emp->department}}</td>
+                                        <td>{{ $emp->no_emp ?? 'N/A' }}</td>
+                                        <td>{{ $emp->first_name ?? 'N/A' }}</td>
+                                        <td>{{ $emp->salary ?? 'N/A' }}</td>
+                                        <td>{{ $emp->gender ?? 'N/A' }}</td>
+                                        <td>{{ $emp->department ?? 'N/A' }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
